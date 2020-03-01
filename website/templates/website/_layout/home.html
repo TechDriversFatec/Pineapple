@@ -1,0 +1,147 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Principal{% endblock %}
+
+{% block content %}
+<style>
+    #conteudo{
+        margin: auto;
+        width: 80%;
+        height: auto;
+        background-color: white;
+        padding: 10px;
+        margin-top: 50px;
+        -webkit-box-shadow: 0px 10px 45px -20px rgba(0,0,0,0.63);
+        -moz-box-shadow: 0px 10px 45px -20px rgba(0,0,0,0.63);
+        box-shadow: 0px 10px 45px -20px rgba(0,0,0,0.63);
+    }
+    #calendar{
+        height: auto;
+    }
+    [btn-group] {
+	position:relative;
+	display:inline-block;
+	margin:10px 0;
+}
+
+[btn-group]:before {
+	content:attr(data-grouptype);
+	color:#999;
+	display:block;
+	font-size:0.8125em;
+	width:19px;
+	height:19px;
+	padding:5px;
+	border-radius:50%;
+	background:#FFF;
+	position:absolute;
+	left:50%;
+	top:6px;
+	margin-left:-18px;
+	line-height:19px;
+}
+
+[btn-group] > a + a {
+	margin-left:5px;
+}
+
+[btn-group] > a {
+	display:inline-block;
+	padding:6px 14px;
+	background:#F2F2F2;
+	border-radius:3px;
+	font-size:0.8125em;
+	color:#B9BCBC;
+	transition:background .3s ease, color .3s ease;
+	text-decoration:none;
+	transition:color .3s ease;
+	padding:12px 28px;
+	text-transform:uppercase;
+}
+
+[btn-group] > a:nth-of-type(1) {
+	background:#799999;
+	color:#FFF;
+}
+
+[btn-group] > a:nth-of-type(1):hover {
+	background: #799999;
+}
+
+[btn-group] > a:nth-of-type(2) {
+	background:#63FFA7;
+	color:#FFF;
+}
+
+[btn-group] > a:nth-of-type(2):hover {
+	background:#63FFA7;
+}
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function toMilliseconds(minutes) {
+      return minutes * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      
+      //quando eu passar o mouse sobre uma determinada tarefa de um projeto, as informacoes abaixo aparecerao
+      var otherData = new google.visualization.DataTable();
+      otherData.addColumn('string', 'Task ID');
+      otherData.addColumn('string', 'Task Name');
+      otherData.addColumn('string', 'Resource');
+      otherData.addColumn('date', 'Start');
+      otherData.addColumn('date', 'End');
+      otherData.addColumn('number', 'Duration');
+      otherData.addColumn('number', 'Percent Complete');
+      otherData.addColumn('string', 'Dependencies');
+
+      
+      //Estes dados abaixo devem vir do backend da app
+      //Mas antes de trazê-los do backend, faca experimentos aqui no frontend mesmo
+      //E lembre-se: como estamos utilizando a arquitetura REST, nosso backend pode ser aquele Java que passei em aula, pode ser Python, e etc
+      
+      otherData.addRows([
+        ['toTrain', 'Walk to train stop', 'walk', null, null, toMilliseconds(5), 100, null],
+        ['music', 'Listen to music', 'music', null, null, toMilliseconds(70), 100, null],
+        ['wait', 'Wait for train', 'wait', null, null, toMilliseconds(10), 100, 'toTrain'],
+        ['train', 'Train ride', 'train', null, null, toMilliseconds(45), 75, 'wait'],
+        ['toWork', 'Walk to work', 'walk', null, null, toMilliseconds(10), 0, 'train'],
+        ['work', 'Sit down at desk', null, null, null, toMilliseconds(2), 0, 'toWork'],
+
+      ]);
+
+      var options = {
+        height: 275,
+        gantt: {
+          defaultStartDateMillis: new Date(2015, 3, 28)
+        }
+      };
+
+      //nesta linha abaixo ele pega todas as configuracoes criadas do grafico e joga em uma div do html com id "chart_div"
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(otherData, options);
+    }
+  </script>
+  <center>
+  <div style="margin-top: 30px;">
+    <div btn-group data-grouptype="OU">
+        <a href="#">Mês anterior</a>
+        <a href="#">Próximo mês</a>
+    </div>
+   </div>
+    
+        <div id="conteudo">
+            <h1>Calendário de tarefas</h1>
+            <div id="calendar">
+                <div id="chart_div"></div>
+            </div>
+        </div>
+    </center>
+
+{% endblock %}
