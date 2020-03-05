@@ -18,7 +18,7 @@ from . import views
 app_name = 'website'
 
 urlpatterns = [
-    path('', views.post_list, name='index'),
-    path('yourName/<str:name>', views.yourName, name='about'),
+    path('', views.lista_funcionarios, name='index'),
+    path('cadastro/', views.cadastro, name='cadastro'),
     path('contato/', views.contact, name='contact'),
 ]
