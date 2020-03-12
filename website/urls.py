@@ -18,7 +18,10 @@ from . import views
 app_name = 'website'
 
 urlpatterns = [
-    path('', views.lista_funcionarios, name='index'),
+    path('', views.home, name='index'),
     path('cadastro/', views.cadastro, name='cadastro'),
-    path('contato/', views.contact, name='contact'),
+    path('relatorio/', views.funcionarioList, name='funcionario-list'),
+    path('relatorio/<int:id>', views.funcionarioView, name='relatorio-view'),
+    path('edit/<int:id>', views.funcionarioEdit, name='funcionario-edit'),
+    path('delete/<int:id>', views.funcionarioDelete, name='funcionairo-delete'),
 ]
