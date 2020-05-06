@@ -1,31 +1,31 @@
-# Pineapple :pineapple:
+# :pineapple: Pineapple 
 
 Pineapple é um sistema que será capaz de gerenciar as tarefas e atividades de funcionários dentro de uma empresa, utilizando do diagrama de Gantt que dará uma visão geral e ampla do cronograma de atividades para quem deseja gerenciar o planejamento de sua equipe.
 
 # O que consiste a ferramenta ?
 
-## Problema :x:
+## :x: Problema 
 
 Existem diversas ferramentas que utilizam o diagrama de Gantt no mercado, porém, por serem muito complexas alguns usuários acabam por não utilizarem a ferramenta e optam por outras alternativas que não são tão eficazes.
 
 ## Requisitos Funcionais
 
--Cadastro de projetos da equipe
--Cadastro de tarefas do projeto
--Cadastro de funcionários da empresa
--Deverá conter o diagrama de Gantt para gestão de atividades
--Algumas tarefas dependerão de outras tarefas para serem feitas
--Os dias não úteis deverão ser desconsiderados, inclusive as férias do funcionário
--O usuário poderá alterar o planejamento do projeto com o mouse
--O diagrama poderá ser filtrado por mês e ano
--Após as devidas alterações no diagrama, o usuário poderá salvar o registro atual como uma imagem do atual estado do gráfico
+-Cadastro de projetos da equipe <br>
+-Cadastro de tarefas do projeto <br>
+-Cadastro de funcionários da empresa <br>
+-Deverá conter o diagrama de Gantt para gestão de atividades <br>
+-Algumas tarefas dependerão de outras tarefas para serem feitas <br>
+-Os dias não úteis deverão ser desconsiderados, inclusive as férias do funcionário <br>
+-O usuário poderá alterar o planejamento do projeto com o mouse <br>
+-O diagrama poderá ser filtrado por mês e ano <br>
+-Após as devidas alterações no diagrama, o usuário poderá salvar o registro atual como uma imagem do atual estado do gráfico <br>
 
 ## Requisitos não Funcionais
 
--__Disponibilidade:__ O sistema deverá ser acessado por todos e a qualquer momento
--__Usabilidade:__ Toda a estrutura do projeto será pensada para que o sistema seja de fácil utilização e que esteja bem intuitivo, detalhes como cores e estrutura da página estão sendo planejadas para maior usabilidade.
--__Desempenho:__ O projeto como um todo deverá ser rápido para que não diminua a produtividade de quem ira gerir os gráficos
--__Portabilidade:__ Para que seja utilizado em diversas plataformas, o projeto deverá funcionar em diversos dispositivos
+-__Disponibilidade:__ O sistema deverá ser acessado por todos e a qualquer momento <br>
+-__Usabilidade:__ Toda a estrutura do projeto será pensada para que o sistema seja de fácil utilização e que esteja bem intuitivo, detalhes como cores e estrutura da página estão sendo planejadas para maior usabilidade. <br>
+-__Desempenho:__ O projeto como um todo deverá ser rápido para que não diminua a produtividade de quem ira gerir os gráficos <br>
+-__Portabilidade:__ Para que seja utilizado em diversas plataformas, o projeto deverá funcionar em diversos dispositivos <br>
 
 ### Valor agregado 💸
 
