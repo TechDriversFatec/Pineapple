@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'website/css/styles.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <ul class="container">
+      <li><a href='#'>Calendário</a></li>
+      <li><a href='cadastro/'>Cadastro</a></li>
+      <li><a href='relatorio/'>Relatório</a></li>
+    </ul><!-- .container -->
+  </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'website/js/scripts.js' %}"></script>
+
+</body>
+</html>
