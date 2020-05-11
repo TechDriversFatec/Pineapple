@@ -1,4 +1,7 @@
 
+# Projeto Integrador - 2º BD
+<br>
+
 # Disciplinas
 
 - Lab. Desevolvimento BD II - Profº Adriana da Silva <br>
@@ -68,32 +71,27 @@ Os requisitos podem ser divididos em dois tópicos, os Funcionais e Não Funcion
 ## Funcionais
 
 ### Story Cards
-1ª Entrega  
+## 1ª Entrega  
  - Listagem dos requisitos que o cliente deseja no projeto
  - Criação da primeira versão do layout da aplicação
 - O gerente do projeto pode visualizar um diagrama Gantt com informações básicas das tarefas que estão sendo desenvolidas em um determinado projeto. Estas informações básicas são: nome da tarefa, duração e interdependência entre tarefas (de forma estática por enquanto).  
 - Ao passar mouse sobre cada tarefa, o gerente de projetos pode ver informações detalhadas como a % do andamento da tarefa e os recursos (de forma estática por enquanto).
 
-2ª Entrega 
+## 2ª Entrega 
  - O usuário poderá cadastrar funcionários no sistema
  - O usuário poderá cadastrar projetos no sistema
  - O usuário poderá cadastrar tarefas em projetos
  - O usuário poderá encontrar as tarefas no diagrama
- - 
-3ª Entrega 
+
+## 3ª Entrega 
  - Futuras ideias serão discutidas
  
 ## Requisitos não Funcionais
 
 -  __Disponibilidade:__ O sistema deverá ser acessado por todos e a qualquer momento <br>
-
 -  __Usabilidade:__ Toda a estrutura do projeto será pensada para que o sistema seja de fácil utilização e que esteja bem intuitivo, detalhes como cores e estrutura da página estão sendo planejadas para maior usabilidade. <br>
-
 -  __Desempenho:__ O projeto como um todo deverá ser rápido para que não diminua a produtividade de quem ira gerir os gráficos <br>
-
 -  __Portabilidade:__ Para que seja utilizado em diversas plataformas, o projeto deverá funcionar em diversos dispositivos <br>
-
-  
 
 ### Valor agregado 💸
 
