@@ -81,7 +81,7 @@ Os requisitos podem ser divididos em dois tópicos, os Funcionais e Não Funcion
  - O usuário poderá encontrar as tarefas no diagrama
  - 
 3ª Entrega 
- -  
+ - Futuras ideias serão discutidas
  
 ## Requisitos não Funcionais
 
