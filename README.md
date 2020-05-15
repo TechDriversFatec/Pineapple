@@ -77,13 +77,6 @@
 Pineapple é um sistema que será capaz de gerenciar as tarefas e atividades de funcionários dentro de uma empresa, utilizando do diagrama de Gantt que dará uma visão geral e ampla do cronograma de atividades para quem deseja gerenciar o planejamento de sua equipe.
 
   
-
-  
-
-# O que consiste a ferramenta ?
-
-  
-
   
 
 ## :x: Problema
@@ -93,7 +86,6 @@ Pineapple é um sistema que será capaz de gerenciar as tarefas e atividades de 
   
 
 Existem diversas ferramentas que utilizam o diagrama de Gantt no mercado, porém, por serem muito complexas alguns usuários acabam por não utilizarem a ferramenta e optam por outras alternativas que não são tão eficazes.
-
   
 
   
