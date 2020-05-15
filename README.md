@@ -181,6 +181,13 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 
 - O usuário poderá pesquisar cadastros de projetos, tarefas e funcionários
 
+### Diagrama de caso e uso
+
+<div align="left">
+    <img src="![UML](uploads/8c385fbaaa93df451256d8088d54ab67/UML.jpeg)" width="640" />
+    <div height="480"></div>
+</div>
+
 ## Requisitos não Funcionais
 Requisitos não funcionais são os requisitos relacionados ao uso da aplicação em termos de desempenho, usabilidade, disponibilidade, portabilidade e tecnologias envolvidas
 
