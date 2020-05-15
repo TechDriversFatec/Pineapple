@@ -184,7 +184,7 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 ### Diagrama de caso e uso
 
 <div align="left">
-    <img src="https://gitlab.com/perilojunior68/visao-estrategica-de-projeto/-/wikis/uploads/![UML](uploads/8c385fbaaa93df451256d8088d54ab67/UML.jpeg)" width="640" />
+    <img src="https://gitlab.com/perilojunior68/visao-estrategica-de-projeto/-/wikis/uploads/uploads/8c385fbaaa93df451256d8088d54ab67/UML.jpeg" width="640" />
     <div height="480"></div>
 </div>
 
