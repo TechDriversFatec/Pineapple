@@ -135,11 +135,11 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 
 - O usuário poderá, cadastrar, atualizar, visualizar e deletar dados relacionados a tarefas cadastrados.
 
-- O usuário poderá ver as informações cadastradas no gráfico.
-
   
 
 ####  3ª Entrega
+
+- O usuário poderá ver as informações cadastradas no gráfico.
 
 - O usuário poderá adicionar tarefas a um projeto
 
@@ -151,7 +151,6 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 
 - O usuário poderá salvar as alterações feitas no planejamento do gráfico através de um .jpg
 
-  
 
 ####  4° Entrega
 
@@ -191,7 +190,23 @@ Requisitos não funcionais são os requisitos relacionados ao uso da aplicação
 
 -  __Portabilidade:__ Para que seja utilizado em diversas plataformas, o projeto deverá funcionar em diversos dispositivos <br>
 
- 
+ ### Backlog
+- A prioridade das tarefas serão dadas pelo gráfico abaixo, sendo a tarefa mais importante representada com o menor número e a que deixaremos para entregas futuras o número 5. Cada Sprint representa um número na prioridade.
+
+|Id de tarefa|Nome|Descrição|Prioridade
+|---|---|---|---|
+| RF001 | Criação de interface | Primeira versão da interface do projeto| 1
+| RF002 | Gerenciamento de funcionários | Permitir o cadastro, alteração e exclusão de funcionários.| 2
+| RF003 | Gerenciamento de projeto | Permitir o cadastro, alteração e exclusão de projetos.| 2
+| RF004 | Gerenciamento de tarefas | Permitir o cadastro, alteração e exclusão de tarefas associadas a projetos.| 3
+| RF005 | Associar tarefa, projeto e funcionário | Atualizar a tarefa com funcionário vinculado.| 3
+| RF006 | Mostrar projetos no diagrama de Gantt | Permitir visibilidade dinâmica para os projetos cadastrados.|3
+| RF007 | Alteração de prazos pelo gráfico (alpha) | Permite a edição de uma atividade ao clicar no projeto.| 3
+| RF008 | Salvamento via .jpg da tela do gráfico | Permite salvar uma cópia das modificações do projeto.| 3
+| RF009 | Desconsiderar dias não úteis | No diagrama, dias não úteis serão desconsiderados.| 4
+| RF010 | As tarefas terão dependências de outras | Possibilita níveis e prioridades de tarefas no projeto.| 4
+| RF010 | Considerar carga e peso de trabalho | Permite a exclusão de um perfil de programador do sistema.| 5
+| RF011 | Pesquisar por projeto, funcionário e tarefa na interface | Pesquisa através de um formulário de itens cadastrados.| 5
 
 ### Heurísticas
 
