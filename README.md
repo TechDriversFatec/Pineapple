@@ -271,3 +271,5 @@ Para o gerenciamento de informações do site estamos utilizando a linguagem de 
 
 #### Apresentação do protótipo
  - https://youtu.be/MTuKAnL-SPk
+#### Apresentação entrega 3
+ - https://www.youtube.com/watch?v=9eeRtMzRgNk
