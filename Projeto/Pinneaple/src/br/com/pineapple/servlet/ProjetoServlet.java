@@ -9,39 +9,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pineapple.dao.FuncionarioDAO;
-import br.com.pineapple.domain.Funcionario;
+import br.com.pineapple.dao.ProjetoDAO;
+import br.com.pineapple.domain.Projeto;
 
-@WebServlet("/FuncionarioServlet")
-public class FuncionarioServlet extends HttpServlet {
+@WebServlet("/ProjetoServlet")
+public class ProjetoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private FuncionarioDAO fdao = new FuncionarioDAO();
-	
-    public FuncionarioServlet() {
 
+    public ProjetoServlet() {
+    	
     }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// Recebimento de strings da pagina de cadastro
 		String nome = request.getParameter("nome");
-		String email = request.getParameter("email");
-		String cpf = request.getParameter("cpf");
-
-			Funcionario registro = new Funcionario();
-			registro.setCpf(cpf);
-			registro.setEmail(email);
-			registro.setNome(nome);
+		String inicio = request.getParameter("inicio");
+		String entrega = request.getParameter("entrega");
+		
+		// Instanciando variavel tipo
+		Projeto p = new Projeto();
+		// Setando resultados
+		p.setNome(nome);
+		p.setInicio(inicio);
+		p.setEntrega(entrega);
+		
+		ProjetoDAO pdao = new ProjetoDAO();
+		try {
+			pdao.salvar(p);
+			response.sendRedirect("index.jsp#t3");
+		}catch(SQLException ex) {
 			
-			try {
-			fdao.salvar(registro);
-			response.sendRedirect("index.jsp#t2");
-			}catch(SQLException ex) {
-				ex.printStackTrace();
-				ex.getMessage();
-			}
 		}
+		
+	}
+
 }

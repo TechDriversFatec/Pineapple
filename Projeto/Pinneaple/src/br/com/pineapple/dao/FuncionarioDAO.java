@@ -12,8 +12,8 @@ import br.com.pineapple.factory.ConexaoFactory;
 public class FuncionarioDAO{
 	public void salvar(Funcionario f) throws SQLException{
 		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT INTO funcionario ");
-		sql.append("(cpf, nome, email )");
+		sql.append("INSERT INTO recurso ");
+		sql.append("(cpf, nome_recurso, email) ");
 		sql.append("VALUES(?,?,?)");
 		
 		Connection conexao = ConexaoFactory.conectar();
@@ -29,8 +29,8 @@ public class FuncionarioDAO{
 	
 	public Funcionario consultarCPF(Funcionario f) throws SQLException{
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT cpf, nome ");
-		sql.append("FROM funcionario ");
+		sql.append("SELECT cpf, nome_recurso, email ");
+		sql.append("FROM recurso ");
 		sql.append("WHERE cpf = ?");
 		
 		Connection conexao = ConexaoFactory.conectar();
@@ -45,7 +45,8 @@ public class FuncionarioDAO{
 		if(resultado.next()) {
 			retorno = new Funcionario();
 			retorno.setCpf(resultado.getString("cpf"));
-			retorno.setNome(resultado.getString("nome"));
+			retorno.setNome(resultado.getString("nome_recurso"));
+			retorno.setEmail(resultado.getString("email"));
 		}
 		
 		return retorno;
@@ -54,36 +55,37 @@ public class FuncionarioDAO{
 	public void atualizar(Funcionario f) throws SQLException{
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append("UPDATE funcionario ");
-		sql.append("SET nome = ? ");
+		sql.append("UPDATE recurso ");
+		sql.append("SET nome_recurso = ? , email = ? ");
 		sql.append("WHERE cpf = ?");
 		
 		Connection conexao = ConexaoFactory.conectar();
 		
 		PreparedStatement comando = conexao.prepareStatement(sql.toString());
 		comando.setString(1, f.getNome());
-		comando.setString(2, f.getCpf());
+		comando.setString(2, f.getEmail());
+		comando.setString(3, f.getCpf());
 		comando.executeUpdate();
 	}
 	
 	public void excluir(Funcionario f) throws SQLException{
 		StringBuilder sql = new StringBuilder();
-		sql.append("DELETE FROM funcionario ");
+		sql.append("DELETE FROM recurso ");
 		sql.append("WHERE cpf = ?");
 		
 		Connection conexao = ConexaoFactory.conectar();
 		
 		PreparedStatement comando = conexao.prepareStatement(sql.toString());
-		comando.setString(1, f.getNome());	
+		comando.setString(1, f.getCpf());	
 		comando.executeUpdate();
 		
 		}
 	
 	public ArrayList<Funcionario> listar() throws SQLException{
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT cpf, nome, email ");
-		sql.append("FROM funcionario ");
-		sql.append("ORDER BY nome ASC ");
+		sql.append("SELECT cpf, nome_recurso, email ");
+		sql.append("FROM recurso ");
+		//sql.append("ORDER BY nome ASC ");
 		
 		Connection conexao = ConexaoFactory.conectar();
 		
@@ -95,7 +97,7 @@ public class FuncionarioDAO{
 		while(resultado.next()) {
 			Funcionario f = new Funcionario();
 			f.setCpf(resultado.getString("cpf"));
-			f.setNome(resultado.getString("nome"));
+			f.setNome(resultado.getString("nome_recurso"));
 			f.setEmail(resultado.getString("email"));
 			
 			lista.add(f);
@@ -104,5 +106,5 @@ public class FuncionarioDAO{
 		return lista;
 		
 	}
-	
+
 }
