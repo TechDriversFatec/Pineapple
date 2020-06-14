@@ -147,12 +147,12 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 
 - O usuário poderá atrelar um funcionário cadastrado no projeto para uma tarefa do mesmo
 
-- O usuário poderá manipular o planejamento das tarefas do projeto através do gráfico
-
-- O usuário poderá salvar as alterações feitas no planejamento do gráfico através de um .jpg
+- O usuário poderá manipular o planejamento das tarefas do projeto através do gráfico, editando em formlário
 
 
 ####  4° Entrega
+
+- O usuário poderá manipular o planejamento das tarefas do projeto através do gráfico, clicando e arrastando
 
 - O gráfico poderá ser manipulado onde o usuário podera esconder as colunas do gráfico que não deseja ver
 
@@ -167,6 +167,8 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
   
 
 ####  5º Entrega
+
+- O usuário poderá salvar as alterações feitas no planejamento do gráfico através de um .jpg
 
 - Considerar carga e custo de trabalho
 
