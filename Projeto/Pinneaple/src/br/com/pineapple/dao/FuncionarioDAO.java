@@ -10,6 +10,7 @@ import br.com.pineapple.domain.Funcionario;
 import br.com.pineapple.factory.ConexaoFactory;
 
 public class FuncionarioDAO{
+	
 	public void salvar(Funcionario f) throws SQLException{
 		StringBuilder sql = new StringBuilder();
 		sql.append("INSERT INTO recurso ");

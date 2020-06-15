@@ -48,8 +48,10 @@
 	    var nome = "<%= projetos.getNome() %>"
 	    var inicio = "<%= projetos.getInicio() %>"
 	    var entrega = "<%= projetos.getEntrega() %>"
+	    var link = "includes/editProj.jsp?u=<%=projetos.getNome()%>"
+	    console.log(link);
 	    var i = 1
-	    g.AddTaskItem(new JSGantt.TaskItem(i,   nome,    inicio , entrega , 'ffff00', 'http://google.com', 0, 'Brian',    20, 0, 0, 1,122));
+	    g.AddTaskItem(new JSGantt.TaskItem(i,   nome,    inicio , entrega , 'ffff00', link, 0, 'Silvio Luis',    20, 0, 0, 1,122));
 	    
 	    i++;
 

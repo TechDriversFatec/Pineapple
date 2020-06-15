@@ -1,5 +1,5 @@
 <%@page import="br.com.pineapple.dao.FuncionarioDAO"%>
-<%@page import="br.com.pineapple.domain.ProjFunc" %>
+<%@page import="br.com.pineapple.domain.TarFunc" %>
 <%@page import="java.sql.SQLException"%>
 <%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -10,31 +10,33 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-	<jsp:useBean id="pdao" class="br.com.pineapple.dao.ProjetoDAO"/>
-	<jsp:useBean id="pfdao" class="br.com.pineapple.dao.ProjFuncDAO"/>
+	<jsp:useBean id="tdao" class="br.com.pineapple.dao.TarefaDAO"/>
+	<jsp:useBean id="tfdao" class="br.com.pineapple.dao.TarFuncDAO"/>
 	<jsp:useBean id="fdao" class="br.com.pineapple.dao.FuncionarioDAO"/>
 	
 	<%@ page import ="java.util.ArrayList"%>
 	<%@ page import ="java.util.List"%>
-	<%@ page import ="br.com.pineapple.domain.Projeto"%>
+	<%@ page import ="br.com.pineapple.domain.Tarefa"%>
 </head>
 <body>
 <%
-	String nome = request.getParameter("u");
+	String nome_tarefa = request.getParameter("u");
 
-	Projeto p1 = new Projeto();
-	p1.setNome(nome);
+	Tarefa t1 = new Tarefa();
+	t1.setNome_tarefa(nome_tarefa);
 
-	Projeto p2 = pdao.consultarNome(p1);
+	Tarefa t2 = tdao.consultarTarefa(t1);
 	
-	String splitFuncionario[] = p2.toString().split(" ");
+	String[] splitTarefa = t2.toString().split(" ");
+	
+	System.out.println(splitTarefa);
 
 %>
 
-<form action = "../ProjetoUpdate" method="post">
-	 <input type="text" id="nome" name="nome" value=<%= splitFuncionario[0] %>><br><br>
-	 <input type="text" id="inicio" name="inicio" value=<%= splitFuncionario[1] %>><br><br>
-	 <input type="text" id="entrega" name="entrega" value=<%= splitFuncionario[2] %>><br><br>
+<form action = "../TarefaUpdate" method="post">
+	 <input type="text" id="nome_tarefa" name="nome_tarefa" value=<%= splitTarefa[0] %>><br><br>
+	 <input type="text" id="data_inicio" name="data_inicio" value=<%= splitTarefa[1] %>><br><br>
+	 <input type="text" id="data_termino" name="data_termino" value=<%= splitTarefa[2] %>><br><br>
 	 
 	 <input type="submit" value="Atualizar !">
  </form>
@@ -60,8 +62,8 @@
 	
 	<div class="conteudo">
 		<br>
-		<form action = "../ProjFuncServlet" method="post">
-			<input type="text" id="nomeP" name="nomeP" hidden="true" value="<%= splitFuncionario[0] %>" >
+		<form action = "../TarFuncServlet" method="post">
+			<input type="text" id="nomeF" name="nomeF" hidden="true" value="<%= splitTarefa[0] %>" >
 				<select name="funcionarios" id="funcionarios">
 					<%
 					  	ArrayList<Funcionario> listaSelect = fdao.listar();
@@ -90,25 +92,24 @@
 				</tr>
 				</thead>
 			<%	
-				ProjFunc pj = new ProjFunc();	
-				pj.setNome(nome);	
+				TarFunc tf = new TarFunc();	
+				tf.setNome_tarefa(nome_tarefa);
 			
-				ArrayList<ProjFunc> lista = pfdao.listar(pj);
+				ArrayList<TarFunc> lista = tfdao.listar();
 				
 				Funcionario f = new Funcionario();
 				
-				for(ProjFunc rel : lista){
+				for(TarFunc rel : lista){
 					f.setCpf(rel.getCpf());
 					f.setCpf(f.getCpf());
 					Funcionario f2 = fdao.consultarCPF(f);
 					String[] splitF = f2.toString().split(" ");
-					
 			%>
 			<tbody>
 					<tr>
 						<td><%= splitF[1] %></td>
 						<td>-</td>
-						<td><a href='pjDelete.jsp?d=<%= splitFuncionario[0] + "&d2=" + f.getCpf() %>'>Excluir</a></td>
+						<td><a href='tfDelete.jsp?d=<%= splitTarefa[0] + "&d2=" + f.getCpf() %>'>Excluir</a></td>
 					</tr>
 			<%
 				}
