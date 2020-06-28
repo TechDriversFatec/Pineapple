@@ -13,7 +13,7 @@
 	  
 	<div class="conteudo">
 		<form action="FuncionarioServlet" method="post" id="cadastro" class="w3-container w3-card-4 w3-light-grey">
-			  <h3>Cadastro de funcionários</h3>
+			  <h3>Cadastro de funcionarios</h3>
 			  <p>      
 			  <label>CPF</label>
 			  <input class="w3-input" type="text" name="cpf" id="cpf"></p>

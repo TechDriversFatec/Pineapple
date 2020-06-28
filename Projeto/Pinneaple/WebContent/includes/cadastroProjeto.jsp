@@ -1,14 +1,16 @@
-	<%@page import="java.util.ArrayList"%>
+	<%@ page import="java.util.ArrayList"%>
 	<%@ page import ="java.util.List"%>
 	<%@ page import ="br.com.pineapple.domain.Projeto"%>
 	<%@ page import ="br.com.pineapple.domain.Funcionario"%>
+	<%@ page import ="br.com.pineapple.domain.Tarefa"%>
 	<jsp:useBean id="pdao" class="br.com.pineapple.dao.ProjetoDAO"/>
 	<jsp:useBean id="fdao2" class="br.com.pineapple.dao.FuncionarioDAO"/>
+
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	
+
 <html>
 	<div class="conteudo">	
-		
+
 		<form method="post" action="ProjetoServlet" class="w3-container w3-card-4 w3-light-grey">
 			  <h3>Cadastro de projetos</h3>
 			  <p>      
@@ -33,10 +35,12 @@
 				}
 			  %>
 				</select>
+
 			  <br>
 			  <br>
 		  	  <input type="submit" class="cool-button" value="Cadastrar !">
 		</form>
+		
 		<br>
 		<button onclick="document.getElementById('id02').style.display='block'" class="cool-button" onclick="myFunction()">Mostrar cadastrados</button>
 		<br>

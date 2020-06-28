@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pineapple.dao.FuncionarioDAO;
 import br.com.pineapple.dao.TarFuncDAO;
 import br.com.pineapple.domain.TarFunc;
 

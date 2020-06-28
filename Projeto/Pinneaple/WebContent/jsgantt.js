@@ -182,7 +182,7 @@ JSGantt.GanttChart =  function(pGanttVar, pDiv, pFormat)
       var vShowStartDate = 1;
       var vShowEndDate = 1;
       var vDateInputFormat = "dd/mm/yyyy";
-      var vDateDisplayFormat = "mm/dd/yy";
+      var vDateDisplayFormat = "dd/mm/yy";
 	  var vNumUnits  = 0;
       var vCaptionType;
       var vDepId = 1;
@@ -690,7 +690,7 @@ JSGantt.GanttChart =  function(pGanttVar, pDiv, pFormat)
 
 	        else if(vFormat == 'day' )
              {
-               if( JSGantt.formatDateStr(vCurrDate,'dd/mm/yyyy') == JSGantt.formatDateStr(vTmpDate,'dd/mm/yyyy')) {
+               if( JSGantt.formatDateStr(vCurrDate,'mm/dd/yyyy') == JSGantt.formatDateStr(vTmpDate,'mm/dd/yyyy')) {
                   vWeekdayColor  = "ccccff";
                   vWeekendColor  = "9999ff";
                   vWeekdayGColor  = "bbbbff";
@@ -708,7 +708,7 @@ JSGantt.GanttChart =  function(pGanttVar, pDiv, pFormat)
                }
                else {
                   vDateRowStr += '<td class="ghead" style="BORDER-TOP: #efefef 1px solid; FONT-SIZE: 12px; HEIGHT: 19px; BORDER-LEFT: #efefef 1px solid;"  bgcolor=#' + vWeekdayColor + ' align=center><div style="width: '+vColWidth+'px">' + vTmpDate.getDate() + '</div></td>';
-                  if( JSGantt.formatDateStr(vCurrDate,'dd/mm/yyyy') == JSGantt.formatDateStr(vTmpDate,'dd/mm/yyyy')) 
+                  if( JSGantt.formatDateStr(vCurrDate,'mm/dd/yyyy') == JSGantt.formatDateStr(vTmpDate,'mm/dd/yyyy')) 
                      vItemRowStr += '<td class="ghead" style="BORDER-TOP: #efefef 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #efefef 1px solid; cursor: default;"  bgcolor=#' + vWeekdayColor + ' align=center><div style="width: '+vColWidth+'px">&nbsp&nbsp</div></td>';
                   else
                      vItemRowStr += '<td class="ghead" style="BORDER-TOP: #efefef 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #efefef 1px solid; cursor: default;"  align=center><div style="width: '+vColWidth+'px">&nbsp&nbsp</div></td>';
@@ -1453,11 +1453,11 @@ JSGantt.parseDateStr = function(pDateStr,pFormatStr) {
 
    switch(pFormatStr) 
    {
-	  case 'dd/mm/yyyy':
+	  case 'mm/dd/yyyy':
 	     var vDateParts = pDateStr.split('/');
          vDate.setFullYear(parseInt(vDateParts[2], 10), parseInt(vDateParts[0], 10) - 1, parseInt(vDateParts[1], 10));
          break;
-	  case 'mm/dd/yyyy':
+	  case 'dd/mm/yyyy':
 	     var vDateParts = pDateStr.split('/');
          vDate.setFullYear(parseInt(vDateParts[2], 10), parseInt(vDateParts[1], 10) - 1, parseInt(vDateParts[0], 10));
          break;
@@ -1480,10 +1480,10 @@ JSGantt.formatDateStr = function(pDate,pFormatStr) {
       var vDateStr = "";	
 
       switch(pFormatStr) {
-	        case 'dd/mm/yyyy':
-	           return( vDayStr + '/' + vMonthStr + '/' + vYear4Str );  
 	        case 'mm/dd/yyyy':
-	        	return( vMonthStr + '/' + vDayStr + '/' + vYear4Str );
+               return( vMonthStr + '/' + vDayStr + '/' + vYear4Str );
+	        case 'dd/mm/yyyy':
+               return( vDayStr + '/' + vMonthStr + '/' + vYear4Str );
 	        case 'yyyy-mm-dd':
                return( vYear4Str + '-' + vMonthStr + '-' + vDayStr );
 	        case 'mm/dd/yy':

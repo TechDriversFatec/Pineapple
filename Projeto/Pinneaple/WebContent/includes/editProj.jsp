@@ -1,7 +1,8 @@
 <%@page import="br.com.pineapple.dao.FuncionarioDAO"%>
-<%@page import="br.com.pineapple.domain.ProjFunc" %>
+<%@page import="br.com.pineapple.domain.ProjFunc"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,10 +14,14 @@
 	<jsp:useBean id="pdao" class="br.com.pineapple.dao.ProjetoDAO"/>
 	<jsp:useBean id="pfdao" class="br.com.pineapple.dao.ProjFuncDAO"/>
 	<jsp:useBean id="fdao" class="br.com.pineapple.dao.FuncionarioDAO"/>
+	<jsp:useBean id="ptdao" class="br.com.pineapple.dao.TarProjDAO"/>
+	<jsp:useBean id="tdao" class="br.com.pineapple.dao.TarefaDAO"/>
+	
 	
 	<%@ page import ="java.util.ArrayList"%>
 	<%@ page import ="java.util.List"%>
 	<%@ page import ="br.com.pineapple.domain.Projeto"%>
+	<%@ page import ="br.com.pineapple.domain.TarProj"%>
 </head>
 <body>
 <%
@@ -27,7 +32,7 @@
 
 	Projeto p2 = pdao.consultarNome(p1);
 	
-	String splitFuncionario[] = p2.toString().split(" ");
+	String[] splitFuncionario = p2.toString().split(" ");
 
 %>
 
@@ -39,18 +44,97 @@
 	 <input type="submit" value="Atualizar !">
  </form>
  <br>
+ 
+  	  <button onclick="document.getElementById('id777').style.display='block'" class="w3-button w3-black">Editar Tarefas</button>
+  	  
+  	<div id="id777" class="w3-modal">
+     <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-black"> 
+        <span onclick="document.getElementById('id777').style.display='none'" 
+        class="w3-button w3-display-topright">×</span>
+        
+		        <h3>Tarefas</h3>
+		      </header>
+		      
+		      <div class="w3-container">
+		
+			<%@ page import ="br.com.pineapple.domain.Tarefa"%>
+			
+			 <form action="../TarefaServlet" method="post" class="w3-container w3-card-4 w3-light-grey">
+			 <input type="text" id="projetos" name="projetos" hidden="true" value="<%= splitFuncionario[0] %>" >
+				  <h3>Cadastro de tarefas</h3>
+				  <p>      
+				  <label>Nome da Tarefa</label>
+				  <input class="w3-input" type="text" name="nome_tarefa">
+				  <label>Data Inicio</label>
+				  <input class="w3-input" type="text" name="data_inicio">
+				  <label>Data Entrega</label>
+				  <input class="w3-input" type="text" name="data_termino">
+				  <br>
+				  <input type="submit">
+			  </form>
+			  
+			<div class="conteudo">
+				<br>
+				<form action = "../TarProjServlet" method="post">
+					
+					<table class="table">
+						<thead>
+						<tr>
+							<td>Nome da tarefa</td>
+							<td>Data inicio</td>
+							<td>Data termino</td>
+							<td>Alterar</td>
+							<td>Excluir</td>
+						</tr>
+						</thead>
+	  				  <%
+	  					TarProj tp = new TarProj();
+	                   	tp.setNome_projeto(nome);
+	  				  
+					  	ArrayList<TarProj> listaSelectT = ptdao.listarEdit(tp);
+						
+					  	Tarefa t = new Tarefa();
+					  	
+						for(TarProj tarefa : listaSelectT){
+							t.setNome_tarefa(tarefa.getNome_tarefa());
+							Tarefa t2 = tdao.consultarTarefa(t);
+							
+							String[] splitT = t2.toString().split(" ");
+							
+					  %>	  	
+						  <tbody>
+							<tr>
+								<td><%= splitT[0] %></td>
+								<td><%= splitT[1] %></td>
+								<td><%= splitT[2] %></td>
+								<td>-</td>
+								<td><a href='ptDelete.jsp?d=<%= splitFuncionario[0] + "&d2=" + t.getNome_tarefa() %>'>Excluir</a></td>
+							</tr>
+					  <%
+						}
+					  %>
+					</tbody>
+		</table>
+       </form>
+      </div>
+     </div>
+     </div>
+	 </div>
+
+ 
  	  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Editar Funcionarios</button>
  	  
     <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-black"> 
         <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">�</span>
+        class="w3-button w3-display-topright">×</span>
         
         <h3>Funcionarios</h3>
       </header>
+      
       <div class="w3-container">
-
 
     <%@ page import ="java.util.ArrayList"%>
 	<%@ page import ="java.util.List"%>

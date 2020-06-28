@@ -110,6 +110,33 @@ public class TarProjDAO {
 		return lista;
 		
 	}
+	
+	public ArrayList<TarProj> listarEdit(TarProj t) throws SQLException{
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT * ");
+		sql.append("FROM rel_tarefa_projeto ");
+		sql.append("WHERE nome_projeto = ?");
+		//sql.append("ORDER BY nome ASC ");
+		
+		Connection conexao = ConexaoFactory.conectar();
+		
+		PreparedStatement comando = conexao.prepareStatement(sql.toString());
+		comando.setString(1, t.getNome_projeto());
+		ResultSet resultado = comando.executeQuery();
+		
+		ArrayList<TarProj> lista = new ArrayList<TarProj>();
+		
+		while(resultado.next()) {
+			TarProj tp = new TarProj();
+			tp.setNome_tarefa(resultado.getString("nome_tarefa"));
+			tp.setNome_projeto(resultado.getString("nome_projeto"));
+			
+			lista.add(tp);
+		}
+		
+		return lista;
+		
+	}
 
 
 }

@@ -47,7 +47,7 @@
     <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-black"> 
         <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">×</span>
+        class="w3-button w3-display-topright">ï¿½</span>
         
         <h3>Funcionarios</h3>
       </header>

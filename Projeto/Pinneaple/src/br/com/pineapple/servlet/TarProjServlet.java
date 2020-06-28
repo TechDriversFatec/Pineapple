@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pineapple.dao.TarFuncDAO;
 import br.com.pineapple.dao.TarProjDAO;
-import br.com.pineapple.domain.TarFunc;
 import br.com.pineapple.domain.TarProj;
-import br.com.pineapple.domain.Tarefa;
 
 @WebServlet("/TarefaProjetoServlet")
 public class TarProjServlet extends HttpServlet {

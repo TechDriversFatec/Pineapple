@@ -12,6 +12,9 @@
 <script language="javascript" src="jsgantt.js"></script>
 <script language="javascript" src="graphics.js"></script>
 
+<script src="codebase/dhtmlxgantt.js?v=7.0.4"></script>
+<link rel="stylesheet" href="codebase/dhtmlxgantt.css?v=7.0.4">
+
 <title>Pineapple</title>
 </head>
 <body>
