@@ -277,3 +277,5 @@ Para o gerenciamento de informações do site estamos utilizando a linguagem de 
  - https://www.youtube.com/watch?v=9eeRtMzRgNk
 #### Apresentação entrega 4
  - https://www.youtube.com/watch?v=9w4sPRoX_cY&
+ #### Apresentação entrega 5
+ - https://www.youtube.com/watch?v=6l7kA4-Q49U
