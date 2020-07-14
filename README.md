@@ -50,10 +50,6 @@
 
   
 
-:computer: Luciano Donizetti <br>
-
-  
-
 :computer: Perilo <br>
 
   
@@ -159,20 +155,11 @@ Os requisitos funcionais representam o que o software faz, em termos de tarefas 
 - O usuário poderá definir dependências de tarefas
 
 - O usuário poderá salvar no sistema as alterações que fizer no gráfico
-
-- As tarefas associadas devem expurgar os finais de semana e as férias do funcionário
-
-- O usuário poderá dividir a exibição do gráfico em dias, semanas e meses
-
   
 
 ####  5º Entrega
 
-- O usuário poderá salvar as alterações feitas no planejamento do gráfico através de um .jpg
-
-- Considerar carga e custo de trabalho
-
-- O usuário poderá pesquisar cadastros de projetos, tarefas e funcionários
+- Manutenção de bugs reportados em entregas passadas
 
 ### Diagrama de caso e uso
 
@@ -277,5 +264,7 @@ Para o gerenciamento de informações do site estamos utilizando a linguagem de 
  - https://www.youtube.com/watch?v=9eeRtMzRgNk
 #### Apresentação entrega 4
  - https://www.youtube.com/watch?v=9w4sPRoX_cY&
- #### Apresentação entrega 5
+#### Apresentação entrega 5
  - https://www.youtube.com/watch?v=6l7kA4-Q49U
+#### Apresentação entrega final
+ - https://www.youtube.com/watch?v=_gihdsJWg50&feature=youtu.be

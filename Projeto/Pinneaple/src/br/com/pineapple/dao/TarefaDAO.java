@@ -67,6 +67,7 @@ public class TarefaDAO {
 		comando.setString(2, t.getData_termino());
 		comando.setString(3, t.getNome_tarefa());
 		comando.executeUpdate();
+		conexao.close();
 	}
 	
 	public void excluir(Tarefa t) throws SQLException{

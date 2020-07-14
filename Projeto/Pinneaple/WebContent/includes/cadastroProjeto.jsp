@@ -45,7 +45,6 @@
 		<button onclick="document.getElementById('id02').style.display='block'" class="cool-button" onclick="myFunction()">Mostrar cadastrados</button>
 		<br>
 
-			
 			  <div id="id02" class="w3-modal" style="color: black;">
 			    <div class="w3-modal-content">
 			      <div class="w3-container">

@@ -84,23 +84,10 @@ public class ProjFuncDAO {
 		
 		if(resultado.next()) {
 			retorno = new ProjFunc();		
-			retorno.setCpf(resultado.getString("nome_projeto"));
+			retorno.setCpf(resultado.getString("cpf_recurso"));
 		}
 		
 		return retorno;
 	}
-	
-	
-	public static void main(String[] args) {
-		ProjFunc r = new ProjFunc();
-		r.setNome("Projeto2qwqw");
-		r.setCpf("3216547897");
-		ProjFuncDAO pjdao = new ProjFuncDAO();
-		try {
-			pjdao.salvar(r);
-			
-		}catch(SQLException ex) {
-			
-		}
-	}
+
 }

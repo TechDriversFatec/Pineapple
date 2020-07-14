@@ -24569,7 +24569,7 @@ function createGridLineRender(gantt){
 			if (col.name == "add") {
 				var aria = gantt._waiAria.gridAddButtonAttrString(col);
 
-				value = "<div " + aria + " class='gantt_add'></div>";
+				value = "<div " + aria + " class=''></div>";
 				textValue = "";
 			} else {
 				if (col.template)
@@ -28567,7 +28567,7 @@ module.exports = function(gantt){
 		gridScaleCellAttrString: function(column, label){
 			var attrs = "";
 			if(column.name == "add"){
-				attrs = this.getAttributeString({"role":"button", "aria-label": gantt.locale.labels.new_task});
+				attrs = this.getAttributeString();
 			}else{
 
 				var attributes = {

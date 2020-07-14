@@ -43,6 +43,8 @@ public class ProjetoDAO {
 		comando.setString(1, p.getEntrega());
 		
 		comando.executeUpdate();
+		
+		conexao.close();
 	}
 	
 	public void excluir(Projeto p) throws SQLException{

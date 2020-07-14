@@ -8,9 +8,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Projetos</title>
 	<jsp:useBean id="pdao" class="br.com.pineapple.dao.ProjetoDAO"/>
 	<jsp:useBean id="pfdao" class="br.com.pineapple.dao.ProjFuncDAO"/>
 	<jsp:useBean id="fdao" class="br.com.pineapple.dao.FuncionarioDAO"/>
@@ -23,7 +24,7 @@
 	<%@ page import ="br.com.pineapple.domain.Projeto"%>
 	<%@ page import ="br.com.pineapple.domain.TarProj"%>
 </head>
-<body>
+<body style="background-color: rgb(255,215,0);">
 <%
 	String nome = request.getParameter("u");
 
@@ -35,18 +36,24 @@
 	String[] splitFuncionario = p2.toString().split(" ");
 
 %>
-
-<form action = "../ProjetoUpdate" method="post">
-	 <input type="text" id="nome" name="nome" value=<%= splitFuncionario[0] %>><br><br>
-	 <input type="text" id="inicio" name="inicio" value=<%= splitFuncionario[1] %>><br><br>
-	 <input type="text" id="entrega" name="entrega" value=<%= splitFuncionario[2] %>><br><br>
+<div class="conteudo">
+<form action = "../ProjetoUpdate" method="post" class="w3-container w3-card-4 w3-light-grey">
+	<h3>Editar Projeto</h3>
+	<p>  
+	<label><b>Projeto</b></label>
+	 <input type="text" id="nome" name="nome" class="w3-input" value=<%= splitFuncionario[0] %>><br><br>
+	 <label><b>Data de inicio</b></label>
+	 <input type="text" id="inicio" name="inicio" class="w3-input" value=<%= splitFuncionario[1] %>><br><br>
+	 <label><b>Data de entrega</b></label>
+	 <input type="text" id="entrega" name="entrega" class="w3-input" value=<%= splitFuncionario[2] %>><br><br>
 	 
-	 <input type="submit" value="Atualizar !">
+	 <input type="submit" value="Atualizar !" class="cool-button">
  </form>
+
  <br>
  
   	  <button onclick="document.getElementById('id777').style.display='block'" class="w3-button w3-black">Editar Tarefas</button>
-  	  
+
   	<div id="id777" class="w3-modal">
      <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-black"> 
@@ -108,7 +115,7 @@
 								<td><%= splitT[0] %></td>
 								<td><%= splitT[1] %></td>
 								<td><%= splitT[2] %></td>
-								<td>-</td>
+								<td><a href='editTarefa.jsp?u=<%= t.getNome_tarefa() %>'>Alterar</a></td>
 								<td><a href='ptDelete.jsp?d=<%= splitFuncionario[0] + "&d2=" + t.getNome_tarefa() %>'>Excluir</a></td>
 							</tr>
 					  <%
@@ -124,12 +131,12 @@
 
  
  	  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Editar Funcionarios</button>
- 	  
+  </div>	  
     <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-black"> 
         <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">×</span>
+        class="w3-button w3-display-topright">x</span>
         
         <h3>Funcionarios</h3>
       </header>
@@ -146,6 +153,7 @@
 		<br>
 		<form action = "../ProjFuncServlet" method="post">
 			<input type="text" id="nomeP" name="nomeP" hidden="true" value="<%= splitFuncionario[0] %>" >
+				<label>Nome do Funcionario</label>
 				<select name="funcionarios" id="funcionarios">
 					<%
 					  	ArrayList<Funcionario> listaSelect = fdao.listar();
@@ -157,8 +165,8 @@
 						}
 					  %>
 				</select>
-				<br>
-			<input type="submit" value="Adicionar">
+				
+			<input type="submit" value="Adicionar" class="w3-button w3-black">
 		
 		</form>
 		</div>	
@@ -191,7 +199,7 @@
 			<tbody>
 					<tr>
 						<td><%= splitF[1] %></td>
-						<td>-</td>
+						<td><%= splitF[2] %></td>
 						<td><a href='pjDelete.jsp?d=<%= splitFuncionario[0] + "&d2=" + f.getCpf() %>'>Excluir</a></td>
 					</tr>
 			<%
