@@ -267,4 +267,4 @@ Para o gerenciamento de informações do site estamos utilizando a linguagem de 
 #### Apresentação entrega 5
  - https://www.youtube.com/watch?v=6l7kA4-Q49U
 #### Apresentação entrega final
- - https://www.youtube.com/watch?v=_gihdsJWg50&feature=youtu.be
+ - https://www.youtube.com/watch?v=_gihdsJWg50&feature=youtu.be# Pineapple
